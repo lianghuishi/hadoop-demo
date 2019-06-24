@@ -15,6 +15,9 @@ public class AppTest
     @Test
     public void shouldAnswerWithTrue()
     {
-        assertTrue( true );
+        Double a = new Double(1);
+        Double b = new Double(0);
+        System.out.println(a>b);
+
     }
 }
