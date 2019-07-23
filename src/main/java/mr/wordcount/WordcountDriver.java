@@ -17,8 +17,9 @@ public class WordcountDriver {
      */
     public static void main(String[] args) throws Exception{
         Configuration conf = new Configuration();
+        //1、获取job对象
         Job job = Job.getInstance(conf);
-
+        //2、设置jar包
         job.setJarByClass(WordcountDriver.class);
 
         //指定本业务job要使用的mapper/reduce业务类
