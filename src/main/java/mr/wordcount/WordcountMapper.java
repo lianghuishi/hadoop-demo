@@ -16,21 +16,24 @@ import java.io.IOException;
  * VALUEOUT 是用户自定义逻辑处理完之后输出数据中的value，在此处是单词次数 IntWritable
  *
  */
+
+/**
+ * map阶段的业务逻辑就写在自定义的map()方法中
+ * maptask会对每一行输入数据调用一次我们自定义的map()方法中
+ */
 public class WordcountMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
 
-    /**
-     * map阶段的业务逻辑就写在自定义的map()方法中
-     * maptask会对每一行输入数据调用一次我们自定义的map()方法中
-     */
+    Text k = new Text();
+    IntWritable v = new IntWritable(1);
+
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
-
         String line = value.toString();
         String[] words = line.split(" ");
-
-        //将单词输出为<单词，1>
         for (String word: words) {
-            context.write(new Text(word) , new IntWritable(1));
+            k.set(word);
+            context.write(k , v);
         }
     }
+
 }

@@ -34,9 +34,10 @@ public class WordcountDriver {
         job.setOutputValueClass(IntWritable.class);
 
         //指定job输入原始文件所在目录
-        FileInputFormat.setInputPaths(job, new Path(args[0]));
+//        FileInputFormat.setInputPaths(job, new Path(args[0]));
+        FileInputFormat.setInputPaths(job, new Path("g:/t"));
         //指定job的输出结果所在目录
-        FileOutputFormat.setOutputPath(job, new Path(args[1]));
+        FileOutputFormat.setOutputPath(job, new Path("g:/tt/"));
 
         //将job中配置的相关参数，以及job所用的java类所在的jar包，提交给yran运行
 //        job.submit();
