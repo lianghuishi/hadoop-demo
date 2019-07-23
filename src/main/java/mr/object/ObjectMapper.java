@@ -13,6 +13,7 @@ public class ObjectMapper extends Mapper<LongWritable, Text, Text, UserBean> {
 
     @Override
     protected void map(LongWritable key, Text line, Context context) throws IOException, InterruptedException {
+
         String[] split = line.toString().split(",");
 
         String name = split[0];
