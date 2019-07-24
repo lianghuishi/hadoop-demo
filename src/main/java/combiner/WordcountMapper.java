@@ -1,4 +1,4 @@
-package mr.wordcount;
+package combiner;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
@@ -29,7 +29,7 @@ public class WordcountMapper extends Mapper<LongWritable, Text, Text, IntWritabl
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         String line = value.toString();
-        String[] words = line.split(" ");
+        String[] words = line.split(",");
         for (String word: words) {
             k.set(word);
             context.write(k , v);
