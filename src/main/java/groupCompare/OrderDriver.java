@@ -14,7 +14,7 @@ public class OrderDriver {
     public static void main(String[] args) throws Exception, IOException {
 
 // 输入输出路径需要根据自己电脑上实际的输入输出路径设置
-        args  = new String[]{"D:/ideaProject/hadoop-demo/src/main/infile/order" , "g:/output8"};
+        args  = new String[]{"D:/ideaProject/hadoop-demo/src/main/infile/order" , "g:/output6"};
 
         // 1 获取配置信息
         Configuration conf = new Configuration();

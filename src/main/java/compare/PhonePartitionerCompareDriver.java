@@ -25,7 +25,7 @@ public class PhonePartitionerCompareDriver {
          // 加载自定义分区类
          job.setPartitionerClass(PhonePartitioner.class);
          // 设置Reducetask个数
-         job.setNumReduceTasks(5);
+         job.setNumReduceTasks(2);
 
         job.setMapperClass(PhoneCompareMapper.class);
         job.setReducerClass(PhoneCompareReduce.class);
@@ -36,8 +36,8 @@ public class PhonePartitionerCompareDriver {
         job.setOutputKeyClass(LongWritable.class);
         job.setOutputValueClass(PhoneCompareBean.class);
 
-        FileInputFormat.setInputPaths(job, new Path("D:/ideaProject/hadoop-demo/src/main/infile/phone2"));
-        FileOutputFormat.setOutputPath(job, new Path("g:/ttt3/"));
+        FileInputFormat.setInputPaths(job, new Path("D:/ideaProject/hadoop-demo/src/main/infile/phone"));
+        FileOutputFormat.setOutputPath(job, new Path("g:/ttp8/"));
 
         boolean res = job.waitForCompletion(true);
         System.exit(res?0:1);

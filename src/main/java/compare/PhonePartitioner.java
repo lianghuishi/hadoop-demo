@@ -23,6 +23,9 @@ public class PhonePartitioner extends Partitioner <PhoneCompareBean, LongWritabl
         }else if ("139".equals(preNum)) {
             partition = 3;
         }
+        /*else {
+            partition = 4;
+        }*/
         return partition;
 
 /*        // 1 获取手机号码前三位
